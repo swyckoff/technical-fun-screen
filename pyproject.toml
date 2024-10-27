@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "thoughtful_ai"
+version = "0.1.0"
+description = "Take home assignment for Thoughtful AI"
+authors = ["Steve Wyckoff <stevewyckoffjobs@gmail.com>"]
+readme = "README.md"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+
+packages = [
+    { include = "thoughtful_ai", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = {version = "^2.9.2"}
+
+[tool.poetry.dev-dependencies]
+black = "^24.8.0"
+pytest = "^8.3.3"
+pdoc = "^15.0.0"
+
+[tool.poetry.group.cli.dependencies]
+rich = "^13.9.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "-v" # To show test names and results
+
+[tool.poetry.scripts]
+sort = "cli:run"

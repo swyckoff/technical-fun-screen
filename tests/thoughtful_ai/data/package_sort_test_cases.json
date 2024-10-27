@@ -1,0 +1,243 @@
+{
+  "test_cases": [
+    {
+      "description": "TEST - STANDARD Dispatch: width just below bulky dimension threshold (width = 149.99 cm)",
+      "width": 149.99,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 0.01,
+      "expected_dispatch": "STANDARD"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: width exactly at bulky dimension threshold (width = 150.00 cm)",
+      "width": 150.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: width just above bulky dimension threshold (width = 150.01 cm)",
+      "width": 150.01,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+
+    {
+      "description": "TEST - STANDARD Dispatch: height just below bulky dimension threshold (height = 149.99 cm)",
+      "width": 1.0,
+      "height": 149.99,
+      "length": 1.0,
+      "mass": 0.01,
+      "expected_dispatch": "STANDARD"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: height exactly at bulky dimension threshold (height = 150.00 cm)",
+      "width": 1.0,
+      "height": 150.0,
+      "length": 1.0,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: height just above bulky dimension threshold (height = 150.01 cm)",
+      "width": 1.0,
+      "height": 150.01,
+      "length": 1.0,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+
+    {
+      "description": "TEST - STANDARD Dispatch: length just below bulky dimension threshold (length = 149.99 cm)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 149.99,
+      "mass": 0.01,
+      "expected_dispatch": "STANDARD"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: length exactly at bulky dimension threshold (length = 150.00 cm)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 150.0,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: length just above bulky dimension threshold (length = 150.01 cm)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 150.01,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+
+    {
+      "description": "TEST - STANDARD Dispatch: mass just below heavy threshold (mass = 19.99 kg)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 19.99,
+      "expected_dispatch": "STANDARD"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: mass exactly at heavy threshold (mass = 20.00 kg)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 20.0,
+      "expected_dispatch": "SPECIAL"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: mass just above heavy threshold (mass = 20.01 kg)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 20.01,
+      "expected_dispatch": "SPECIAL"
+    },
+
+    {
+      "description": "TEST - STANDARD Dispatch: volume just below bulky volume threshold (volume = 999,999.90 cm³)",
+      "width": 99.99999,
+      "height": 100.0,
+      "length": 100.0,
+      "mass": 0.01,
+      "expected_dispatch": "STANDARD"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: volume exactly at bulky volume threshold (volume = 1,000,000.00 cm³)",
+      "width": 100.0,
+      "height": 100.0,
+      "length": 100.0,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+    {
+      "description": "TEST - SPECIAL Dispatch: volume just above bulky volume threshold (volume = 1,000,000.01 cm³)",
+      "width": 100.0,
+      "height": 100.0,
+      "length": 100.000001,
+      "mass": 0.01,
+      "expected_dispatch": "SPECIAL"
+    },
+
+    {
+      "description": "TEST - REJECTED Dispatch: both bulky (width = 150.00 cm) and heavy (mass = 20.00 kg)",
+      "width": 150.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 20.0,
+      "expected_dispatch": "REJECTED"
+    },
+
+    {
+      "description": "TEST - STANDARD Dispatch: very small dimensions and mass",
+      "width": 0.01,
+      "height": 0.01,
+      "length": 0.01,
+      "mass": 0.01,
+      "expected_dispatch": "STANDARD"
+    },
+
+    {
+      "description": "TEST - ValidationError: (width = -0.01 cm)",
+      "width": -1.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: (height = -0.01 cm)",
+      "width": 1.0,
+      "height": -0.01,
+      "length": 1.0,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: (length = -0.01 cm)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": -0.01,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: (mass = -0.01 cm)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": -0.01,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: (width = 0.0)",
+      "width": 0.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: (height = 0.0)",
+      "width": 1.0,
+      "height": 0.0,
+      "length": 1.0,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: (length = 0.0)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 0.0,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: (mass = 0.0)",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 0.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: invalid value type (width = 'invalid')",
+      "width": "invalid",
+      "height": 1.0,
+      "length": 1.0,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: invalid value type (height = 'invalid')",
+      "width": 1.0,
+      "height": "invalid",
+      "length": 1.0,
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: invalid value type (length = 'invalid')",
+      "width": 1.0,
+      "height": 1.0,
+      "length": "invalid",
+      "mass": 1.0,
+      "expected_exception": "ValidationError"
+    },
+    {
+      "description": "TEST - ValidationError: invalid value type (mass = 'invalid')",
+      "width": 1.0,
+      "height": 1.0,
+      "length": 1.0,
+      "mass": "invalid",
+      "expected_exception": "ValidationError"
+    }
+  ]
+}
